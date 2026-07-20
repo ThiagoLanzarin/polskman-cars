@@ -45,10 +45,10 @@ export function SiteHeader() {
           </span>
           <span className="flex flex-col leading-none">
             <span className="text-base font-bold tracking-tight">
-              APEX<span className="text-primary">.</span>
+              POLSKMAN<span className="text-primary">.</span>
             </span>
             <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
-              Detailing
+              Cars
             </span>
           </span>
         </a>

@@ -46,6 +46,7 @@ type QuoteContextValue = {
   selectedPackages: SelectedLine[]
   totalItems: number
   total: number
+  requiredMissing: string[]
   buildWhatsappUrl: () => string
 }
 
@@ -124,6 +125,14 @@ export function QuoteProvider({ children }: { children: ReactNode }) {
     return all.reduce((sum, line) => sum + line.quantity, 0)
   }, [selectedServices, selectedPackages])
 
+  const requiredMissing = useMemo(() => {
+    const missing: string[] = []
+    if (!customer.name.trim()) missing.push('Nome')
+    if (!customer.model.trim()) missing.push('Carro')
+    if (!customer.color.trim()) missing.push('Cor')
+    return missing
+  }, [customer])
+
   const buildWhatsappUrl = useCallback(() => {
     const lines: string[] = []
     lines.push('Olá!')
@@ -179,6 +188,7 @@ export function QuoteProvider({ children }: { children: ReactNode }) {
     selectedPackages,
     totalItems,
     total,
+    requiredMissing,
     buildWhatsappUrl,
   }
 

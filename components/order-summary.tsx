@@ -68,21 +68,48 @@ function SummaryLines() {
 }
 
 function FinalizeButton({ onClick }: { onClick?: () => void }) {
-  const { buildWhatsappUrl, totalItems } = useQuote()
+  const { buildWhatsappUrl, totalItems, requiredMissing } = useQuote()
+  const [error, setError] = useState<string | null>(null)
+
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (totalItems === 0) {
+      e.preventDefault()
+      setError('Selecione ao menos um serviço ou pacote.')
+      return
+    }
+    if (requiredMissing.length > 0) {
+      e.preventDefault()
+      setError(`Preencha os campos obrigatórios: ${requiredMissing.join(', ')}.`)
+      document
+        .getElementById('contato')
+        ?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      return
+    }
+    setError(null)
+    onClick?.()
+  }
+
   return (
-    <a
-      href={buildWhatsappUrl()}
-      target="_blank"
-      rel="noopener noreferrer"
-      onClick={onClick}
-      aria-disabled={totalItems === 0}
-      className={cn(totalItems === 0 && 'pointer-events-none opacity-50')}
-    >
-      <Button className="h-14 w-full gap-2 rounded-full text-base font-bold hover:bg-primary/85">
-        <MessageCircle className="size-5" />
-        Enviar orçamento pelo WhatsApp
-      </Button>
-    </a>
+    <div>
+      <a
+        href={buildWhatsappUrl()}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={handleClick}
+        aria-disabled={totalItems === 0}
+        className={cn(totalItems === 0 && 'pointer-events-none opacity-50')}
+      >
+        <Button className="h-14 w-full gap-2 rounded-full text-base font-bold hover:bg-primary/85">
+          <MessageCircle className="size-5" />
+          Enviar orçamento pelo WhatsApp
+        </Button>
+      </a>
+      {error && (
+        <p className="mt-2 text-center text-xs font-medium text-destructive">
+          {error}
+        </p>
+      )}
+    </div>
   )
 }
 

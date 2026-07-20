@@ -7,8 +7,6 @@ import { ServicesSection } from '@/components/services-section'
 import { PackagesSection } from '@/components/packages-section'
 import { CustomerForm } from '@/components/customer-form'
 import { OrderSummary, MobileSummaryBar } from '@/components/order-summary'
-import { GallerySection } from '@/components/gallery-section'
-import { TestimonialsSection } from '@/components/testimonials-section'
 import { SiteFooter } from '@/components/site-footer'
 
 export default function Page() {
@@ -30,9 +28,6 @@ export default function Page() {
                 <OrderSummary />
               </div>
             </div>
-
-            <GallerySection />
-            <TestimonialsSection />
           </div>
         </main>
 

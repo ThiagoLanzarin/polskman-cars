@@ -85,8 +85,8 @@ export const services: Service[] = [
   },
   {
     id: 'descontaminacao-glaco',
-    name: 'Descontaminação + Glaco',
-    description: 'Descontaminação com aplicação de repelente de água Glaco.',
+    name: 'Descontaminação + Cristalização de Vidros',
+    description: 'Descontaminação com aplicação de cristalização de vidros.',
     price: 110,
     icon: Umbrella,
   },
@@ -145,7 +145,7 @@ export const packages: Package[] = [
   {
     id: 'bronze',
     name: 'Bronze',
-    price: 130,
+    price: 150,
     tagline: 'O essencial para o dia a dia.',
     includes: [
       'Lavagem Completa',
@@ -156,7 +156,7 @@ export const packages: Package[] = [
   {
     id: 'prata',
     name: 'Prata',
-    price: 220,
+    price: 250,
     tagline: 'Limpeza e proteção reforçadas.',
     includes: [
       'Lavagem Completa',
@@ -169,12 +169,12 @@ export const packages: Package[] = [
   {
     id: 'ouro',
     name: 'Ouro',
-    price: 320,
+    price: 350,
     tagline: 'Brilho e cuidado completo.',
     highlighted: true,
     includes: [
       'Lavagem Completa',
-      'Descontaminação + Glaco',
+      'Descontaminação + Cristalização de Vidros',
       'Hidratação de Couro',
       'Polimento de Faróis',
       'Higienização do Teto',
@@ -190,7 +190,7 @@ export const packages: Package[] = [
       'Lavagem Completa',
       'Polimento Técnico',
       'Cristalização dos Vidros',
-      'Descontaminação + Glaco',
+      'Descontaminação + Cristalização de Vidros',
       'Hidratação de Couro',
       'Polimento de Faróis',
       'Lavagem de Motor',

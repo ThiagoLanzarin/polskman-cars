@@ -10,11 +10,23 @@ const fields: {
   placeholder: string
   full?: boolean
   textarea?: boolean
+  required?: boolean
 }[] = [
-  { key: 'name', label: 'Nome', placeholder: 'Seu nome completo', full: true },
-  { key: 'model', label: 'Modelo do veículo', placeholder: 'Ex: Honda Civic' },
+  {
+    key: 'name',
+    label: 'Nome',
+    placeholder: 'Seu nome completo',
+    full: true,
+    required: true,
+  },
+  {
+    key: 'model',
+    label: 'Carro',
+    placeholder: 'Ex: Honda Civic',
+    required: true,
+  },
   { key: 'year', label: 'Ano', placeholder: 'Ex: 2022' },
-  { key: 'color', label: 'Cor', placeholder: 'Ex: Preto' },
+  { key: 'color', label: 'Cor', placeholder: 'Ex: Preto', required: true },
   {
     key: 'notes',
     label: 'Observações',
@@ -46,7 +58,8 @@ export function CustomerForm() {
           <div>
             <h2 className="text-xl font-bold tracking-tight">Seus dados</h2>
             <p className="text-sm text-muted-foreground">
-              Preencha para enviarmos junto ao orçamento.
+              Campos com <span className="text-primary">*</span> são
+              obrigatórios para enviar o orçamento.
             </p>
           </div>
         </div>
@@ -62,6 +75,7 @@ export function CustomerForm() {
                 className="mb-1.5 block text-sm font-medium text-foreground"
               >
                 {field.label}
+                {field.required && <span className="ml-0.5 text-primary">*</span>}
               </label>
               {field.textarea ? (
                 <textarea

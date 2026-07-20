@@ -9,7 +9,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Apex Detailing — Estética Automotiva Premium',
+  title: 'Polskman Cars — Estética Automotiva Premium',
   description:
     'Proteção, higienização, polimento e brilho de alto padrão. Monte seu orçamento e receba tudo pronto no WhatsApp.',
   generator: 'v0.app',
