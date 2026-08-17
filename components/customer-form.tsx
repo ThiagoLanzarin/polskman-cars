@@ -25,15 +25,14 @@ const fields: {
     placeholder: 'Ex: Honda Civic',
     required: true,
   },
-  { key: 'year', label: 'Ano', placeholder: 'Ex: 2022' },
-  { key: 'color', label: 'Cor', placeholder: 'Ex: Preto', required: true },
+  { key: 'year', label: 'Ano', placeholder: 'Ex: 2011' },
+  { key: 'color', label: 'Cor', placeholder: 'Ex: Prata'},
   {
     key: 'notes',
     label: 'Observações',
-    placeholder: 'Alguma informação adicional?',
+    placeholder: 'Por gentileza, envie nosso WhatsApp fotos do seu veículo para que possamos analisar melhor o serviço junto com os serviços que você deseja.',
     full: true,
-    textarea: true,
-  },
+    textarea: true,  },
 ]
 
 const inputClass =
