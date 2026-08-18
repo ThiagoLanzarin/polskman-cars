@@ -38,7 +38,7 @@ export const services: Service[] = [
     id: 'lavagem-externa',
     name: 'Lavagem Externa',
     description: 'Lavagem detalhada da parte externa.',
-    price: 6000,
+    price: 60,
     icon: Droplets,
   },
   {
